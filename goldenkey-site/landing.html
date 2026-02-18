@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Golden Key Luxury Short Rent - Trasforma il tuo immobile in una rendita passiva di lusso. Gestione completa, zero pensieri.">
+    <meta name="keywords" content="luxury short rent, gestione immobili lusso, rendita passiva, golden key landing">
+    <title>Golden Key | Massimizza la tua Rendita Immobiliare</title>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Preload Hero Resources -->
+    <link rel="preload" href="assets/images/hero-video-1.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="assets/images/hero.png" as="image">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Reusing variables and base styles -->
+    <link rel="stylesheet" href="css/landing.css"> <!-- Specific landing overrides -->
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="landing-page">
+
+    <!-- MINIMALIST HEADER (No Nav) -->
+    <header class="navbar landing-navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="landing.html" class="navbar-logo">
+                <img src="assets/images/logo.png" alt="Golden Key Logo">
+            </a>
+            <div class="nav-lang-switcher">
+                <button class="lang-btn active" data-lang="it">IT</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION: ULTRA-FOCUSED -->
+        <section id="hero" class="hero landing-hero">
+            <div class="hero-video-container">
+                <video autoplay muted loop playsinline class="hero-video active" fetchpriority="high">
+                    <source src="assets/images/hero-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+                <span class="hero-num" data-i18n="hero-num">[01]</span>
+                <h1 class="reveal" data-i18n="landing-hero-title">
+                    Siamo la soluzione Anti-Morosità per la tua Proprietà
+                </h1>
+                <p class="reveal" data-i18n="landing-hero-subtitle">
+                    Gestione professionale di immobili destinati agli affitti a breve termine.
+                </p>
+                <div class="hero-actions reveal">
+                    <button class="btn-primary btn-shimmer"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                        data-i18n="landing-hero-cta">
+                        Calcola il tuo Guadagno <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK TRUST SECTION -->
+        <section class="trust-bar section-padding">
+            <div class="container">
+                <div class="partners-mini flex justify-center gap-12">
+                    <img src="assets/images/logo-airbnb.svg" alt="Airbnb" class="partner-icon">
+                    <img src="assets/images/logo-booking.svg" alt="Booking" class="partner-icon">
+                    <img src="assets/images/logo-vrbo.svg" alt="Vrbo" class="partner-icon">
+                </div>
+
+                <div class="managed-info reveal text-center mt-12">
+                    <h3 class="managed-title" data-i18n="sp-counter-label">Immobili Gestiti in Italia e all'Estero</h3>
+                    <p class="selection-text" data-i18n="landing-selection-text">
+                        Selezioniamo esclusivamente immobili con un’elevata potenzialità nel mercato degli affitti
+                        brevi, al fine di garantire la massima qualità e un rendimento ottimale in ogni progetto.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEY BENEFITS (Why Us Cards) -->
+        <section id="why-us" class="why-us section-padding bg-alt">
+            <div class="container">
+                <div class="cards-grid">
+                    <div class="feature-card reveal">
+                        <i data-lucide="trending-up" class="card-icon"></i>
+                        <h3 class="card-title" data-i18n="landing-why-1-title">Massimo Guadagno</h3>
+                        <p class="card-text" data-i18n="landing-why-1-text">Fino a 3 volte più di un affitto
+                            tradizionale.
+                        </p>
+                    </div>
+                    <div class="feature-card reveal delay-1">
+                        <i data-lucide="shield-check" class="card-icon"></i>
+                        <h3 class="card-title" data-i18n="landing-why-2-title">Zero Rischi</h3>
+                        <p class="card-text" data-i18n="landing-why-2-text">Protezione totale contro danni e morosità.
+                        </p>
+                    </div>
+                    <div class="feature-card reveal delay-2">
+                        <i data-lucide="key" class="card-icon"></i>
+                        <h3 class="card-title" data-i18n="landing-why-3-title">Gestione Passiva</h3>
+                        <p class="card-text" data-i18n="landing-why-3-text">Pensiamo noi a tutto, tu ricevi solo i
+                            bonifici.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONVERSION FORM -->
+        <section id="contact" class="contact-section section-padding">
+            <!-- Background Slideshow logic stays same -->
+            <div class="contact-slideshow">
+                <img src="assets/images/cta-bg-1.webp" class="contact-slideshow-img active" alt="Luxury Property">
+            </div>
+            <div class="contact-overlay"></div>
+
+            <div class="container relative z-10">
+                <div class="contact-grid landing-contact-grid">
+                    <div class="contact-info reveal">
+                        <h2 class="section-title" data-i18n="contact-title">OTTIENI UNA STIMA <br>DI RENDITIVITÀ</h2>
+                        <ul class="check-list">
+                            <li><i data-lucide="check-circle-2" class="check-icon"></i> Pagamenti puntuali garantiti
+                            </li>
+                            <li><i data-lucide="check-circle-2" class="check-icon"></i> Immobili sempre perfetti</li>
+                            <li><i data-lucide="check-circle-2" class="check-icon"></i> Zero burocrazia</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-form-box reveal delay-1">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nome Completo</label>
+                                <input type="text" id="name" name="name" placeholder="Esempio: Mario Rossi" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefono</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+39 000 000 0000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="mario@esempio.it" required>
+                            </div>
+                            <div class="form-group form-consent">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="gdpr-consent" name="gdpr-consent" required>
+                                    <span data-i18n="form-consent">Accetto la <a href="privacy.html">Privacy
+                                            Policy</a></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn-primary w-full" data-i18n="landing-form-submit">VOGLIO LA
+                                MIA STIMA GRATUITA</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer landing-footer">
+        <div class="container text-center">
+            <div class="footer-logo mb-6 justify-center">
+                <img src="assets/images/logo.png" alt="Golden Key Logo" height="40">
+                <span class="logo-text">GOLDEN<span class="text-accent">KEY</span></span>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/goldenkey_shortrent/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                    </svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Golden Key Luxury Short Rent. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+
+    <!-- Firebase SDK (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js" defer></script>
+    <script src="js/firebase-config.js" defer></script>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="js/translations.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

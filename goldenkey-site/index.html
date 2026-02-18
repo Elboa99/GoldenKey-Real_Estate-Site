@@ -4,13 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Golden Key Luxury Short Rent - Gestione professionale di immobili di prestigio per affitti brevi. Massimizza la rendita del tuo immobile senza pensieri.">
+    <meta name="keywords"
+        content="luxury short rent, gestione immobili lusso, affitti brevi, rendita immobiliare, golden key">
     <title>Golden Key | Luxury Short Rent</title>
+
+    <!-- Fonts (Optimization: Loaded in HTML with display=swap) -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Plus+Jakarta+Sans:wght@200..800&display=swap">
 
     <!-- Unified Styles -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Lucide Icons (Minimalist Line Art) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Swiper CSS (Gallery Carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body class="antigravity-mode">
@@ -19,14 +27,19 @@
     <nav class="navbar" id="navbar">
         <div class="container navbar-inner">
             <a href="#hero" class="navbar-logo">
-                <img src="assets/images/logo.png" alt="Golden Key Logo">
+                <img src="assets/images/logo.png" alt="Golden Key Logo" width="180" height="60">
             </a>
             <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#social-proof">Portfolio</a></li>
-                <li><a href="#why-us">Vantaggi</a></li>
-                <li><a href="#services">Servizi</a></li>
-                <li><a href="#contact" class="nav-cta">Contattaci</a></li>
+                <li><a href="#hero" data-i18n="nav-home">Home</a></li>
+                <li><a href="#social-proof" data-i18n="nav-portfolio">Portfolio</a></li>
+                <li><a href="#why-us" data-i18n="nav-why-us">Vantaggi</a></li>
+                <li><a href="#services" data-i18n="nav-services">Servizi</a></li>
+                <li><a href="#contact" class="nav-cta" data-i18n="nav-contact">Contattaci</a></li>
+                <li class="nav-lang-switcher">
+                    <button class="lang-btn active" data-lang="it">IT</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </li>
             </ul>
             <button class="nav-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -37,32 +50,45 @@
     <!-- [01] HERO SECTION — Cinematic Video Background -->
     <section id="hero" class="hero">
         <div class="hero-bg">
-            <video autoplay muted loop playsinline poster="assets/images/hero.png" class="hero-video">
-                <source src="assets/images/hero-video.mp4" type="video/mp4">
+            <video autoplay muted playsinline poster="assets/images/hero.webp" class="hero-video active" id="heroVideo1"
+                fetchpriority="high">
+                <source src="assets/images/hero-1.mp4" type="video/mp4">
             </video>
+            <video muted playsinline preload="none" class="hero-video" id="heroVideo2"
+                data-src="assets/images/hero-2.mp4"></video>
+            <video muted playsinline preload="none" class="hero-video" id="heroVideo3"
+                data-src="assets/images/hero-3.mp4"></video>
+            <video muted playsinline preload="none" class="hero-video" id="heroVideo4"
+                data-src="assets/images/hero-4.mp4"></video>
+            <video muted playsinline preload="none" class="hero-video" id="heroVideo5"
+                data-src="assets/images/hero-5.mp4"></video>
             <!-- Fallback image for slow connections -->
-            <img src="assets/images/hero.png" alt="Luxury Villa" class="hero-image hero-fallback">
+            <img src="assets/images/hero.webp" alt="Luxury Villa" class="hero-image hero-fallback" width="1920"
+                height="1080">
             <div class="hero-overlay"></div>
         </div>
 
         <div class="container hero-content">
-            <span class="hero-num">[01]</span>
+            <span class="hero-num" data-i18n="hero-num">[01]</span>
             <h1 class="text-reveal">
-                <span class="word" style="--i:0">TRASFORMA</span>
-                <span class="word" style="--i:1">IL</span>
-                <span class="word" style="--i:2">TUO</span>
+                <span class="word" style="--i:0" data-i18n="hero-title-1">TRASFORMA</span>
+                <span class="word" style="--i:1" data-i18n="hero-title-2">IL</span>
+                <span class="word" style="--i:2" data-i18n="hero-title-3">TUO</span>
                 <br>
-                <span class="word" style="--i:3">IMMOBILE</span>
-                <span class="word" style="--i:4">IN</span>
-                <span class="word gold-word" style="--i:5">RENDITA</span>
+                <span class="word" style="--i:3" data-i18n="hero-title-4">IMMOBILE</span>
+                <span class="word" style="--i:4" data-i18n="hero-title-5">IN</span>
+                <span class="word gold-word" style="--i:5" data-i18n="hero-title-6">RENDITA</span>
             </h1>
-            <p class="reveal">Gestione professionale di immobili di prestigio per affitti brevi.<br>
-                <span class="text-accent">Zero costi fissi.</span><br>
-                Più rendite e meno pensieri!
+            <p class="reveal">
+                <span data-i18n="hero-subtitle">Gestione professionale di immobili di prestigio per affitti
+                    brevi.</span><br>
+                <span class="text-accent" data-i18n="hero-accent">Zero costi fissi.</span><br>
+                <span data-i18n="hero-footer">Più rendite e meno pensieri!</span>
             </p>
             <div class="hero-actions reveal">
                 <button class="btn-primary btn-shimmer"
-                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                    data-i18n="hero-cta">
                     Richiedi una Stima Gratuita <span class="arrow">→</span>
                 </button>
             </div>
@@ -76,58 +102,82 @@
                 <div class="sp-grid">
                     <!-- Left Column: Counter & Text -->
                     <div class="sp-info reveal">
-                        <span class="section-num">[02]</span>
-                        <h2 class="section-title">ECCELLENZA <br>COMPROVATA</h2>
+                        <span class="section-num" data-i18n="sp-num">[02]</span>
+                        <h2 class="section-title" data-i18n="sp-title">ECCELLENZA <br>COMPROVATA</h2>
                         <div class="counter-box">
                             <span class="counter-num">+50</span>
-                            <p class="counter-label">Immobili Gestiti in Italia e all'Estero</p>
+                            <p class="counter-label" data-i18n="sp-counter-label">Immobili Gestiti in Italia e
+                                all'Estero</p>
                         </div>
-                        <p class="sp-description">La nostra selezione curata di proprietà riflette il nostro impegno per
+                        <p class="sp-description" data-i18n="sp-description">La nostra selezione curata di proprietà
+                            riflette il nostro impegno per
                             la qualità e il rendimento costante.</p>
                         <div class="partners-mini flex gap-6">
-                            <span class="partner-text-logo">LFS</span>
-                            <img src="assets/images/logo-airbnb.svg" alt="Airbnb" class="partner-icon">
-                            <img src="assets/images/logo-booking.svg" alt="Booking" class="partner-icon">
-                            <img src="assets/images/logo-vrbo.svg" alt="Vrbo" class="partner-icon">
-                            <img src="assets/images/logo-expedia.svg" alt="Expedia" class="partner-icon">
+                            <img src="assets/images/logo-airbnb.svg" alt="Partner Airbnb" class="partner-icon"
+                                loading="lazy">
+                            <img src="assets/images/logo-booking.svg" alt="Partner Booking.com" class="partner-icon"
+                                loading="lazy">
+                            <img src="assets/images/logo-vrbo.svg" alt="Partner Vrbo" class="partner-icon"
+                                loading="lazy">
+                            <img src="assets/images/logo-expedia.svg" alt="Partner Expedia" class="partner-icon"
+                                loading="lazy">
                         </div>
                     </div>
 
-                    <!-- Right Column: Property Grid (Asymmetric) -->
-                    <!-- Right Column: Property Grid (Asymmetric) -->
-                    <div class="property-grid reveal delay-1">
-                        <div class="pg-item"><img src="assets/images/property-1.png" alt="Property"></div>
-                        <div class="pg-item span-v"><img src="assets/images/property-2.png" alt="Property"></div>
-                        <div class="pg-item"><img src="assets/images/property-3.png" alt="Property"></div>
-                        <div class="pg-item"><img src="assets/images/property-4.png" alt="Property"></div>
-                        <div class="pg-item span-h"><img src="assets/images/property-5.png" alt="Property"></div>
-                        <div class="pg-item"><img src="assets/images/property-6.png" alt="Property"></div>
+                    <!-- Right Column: Property Grid -->
+                    <div class="sp-gallery reveal delay-1">
+                        <div class="property-grid">
+                            <div class="pg-item"><img src="assets/images/property-1.webp"
+                                    alt="Soggiorno elegante di una proprietà Golden Key" loading="lazy" width="800"
+                                    height="600"></div>
+                            <div class="pg-item span-v"><img src="assets/images/property-2.webp"
+                                    alt="Camera da letto raffinata e luminosa" loading="lazy" width="800" height="1067">
+                            </div>
+                            <div class="pg-item"><img src="assets/images/property-3.webp"
+                                    alt="Dettaglio curato di una camera da letto di lusso" loading="lazy" width="800"
+                                    height="600"></div>
+                            <div class="pg-item"><img src="assets/images/property-4.webp"
+                                    alt="Design d'interni ricercato in una zona notte" loading="lazy" width="800"
+                                    height="600"></div>
+                            <div class="pg-item span-h"><img src="assets/images/property-5.webp"
+                                    alt="Ingresso moderno e accogliente" loading="lazy" width="1200" height="800"></div>
+                            <div class="pg-item"><img src="assets/images/property-6.webp"
+                                    alt="Ampia zona living arredata con gusto" loading="lazy" width="800" height="600">
+                            </div>
+                        </div>
+
+                        <!-- Show More Gallery Button -->
+                        <div class="gallery-cta">
+                            <button class="btn-gallery-trigger" id="showMoreGallery" data-i18n="show-more">
+                                Mostra altro
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Reviews Carousel -->
                 <div class="reviews-carousel-wrapper reveal delay-2">
-                    <h3 class="reviews-carousel-title">COSA DICONO I NOSTRI OSPITI</h3>
+                    <h3 class="reviews-carousel-title" data-i18n="sp-reviews-title">COSA DICONO I NOSTRI OSPITI</h3>
                     <div class="reviews-carousel">
                         <button class="carousel-arrow carousel-prev" aria-label="Precedente">
                             <i data-lucide="chevron-left"></i>
                         </button>
                         <div class="carousel-track-container">
                             <div class="carousel-track">
-                                <div class="carousel-slide"><img src="assets/images/review-1.png"
-                                        alt="Recensione ospite" loading="lazy"></div>
-                                <div class="carousel-slide"><img src="assets/images/review-2.png"
-                                        alt="Recensione ospite" loading="lazy"></div>
-                                <div class="carousel-slide"><img src="assets/images/review-3.png"
-                                        alt="Recensione ospite" loading="lazy"></div>
-                                <div class="carousel-slide"><img src="assets/images/review-4.png"
-                                        alt="Recensione ospite" loading="lazy"></div>
-                                <div class="carousel-slide"><img src="assets/images/review-5.png"
-                                        alt="Recensione ospite" loading="lazy"></div>
-                                <div class="carousel-slide"><img src="assets/images/review-6.png"
-                                        alt="Recensione ospite" loading="lazy"></div>
-                                <div class="carousel-slide"><img src="assets/images/review-7.png"
-                                        alt="Recensione ospite" loading="lazy"></div>
+                                <div class="carousel-slide"><img src="assets/images/review-1.webp"
+                                        alt="Recensione ospite 1" loading="lazy" width="315" height="561"></div>
+                                <div class="carousel-slide"><img src="assets/images/review-2.webp"
+                                        alt="Recensione ospite 2" loading="lazy" width="315" height="561"></div>
+                                <div class="carousel-slide"><img src="assets/images/review-3.webp"
+                                        alt="Recensione ospite 3" loading="lazy" width="474" height="561"></div>
+                                <div class="carousel-slide"><img src="assets/images/review-4.webp"
+                                        alt="Recensione ospite 4" loading="lazy" width="535" height="561"></div>
+                                <div class="carousel-slide"><img src="assets/images/review-5.webp"
+                                        alt="Recensione ospite 5" loading="lazy" width="537" height="561"></div>
+                                <div class="carousel-slide"><img src="assets/images/review-6.webp"
+                                        alt="Recensione ospite 6" loading="lazy" width="504" height="561"></div>
+                                <div class="carousel-slide"><img src="assets/images/review-7.webp"
+                                        alt="Recensione ospite 7" loading="lazy" width="518" height="561"></div>
                             </div>
                         </div>
                         <button class="carousel-arrow carousel-next" aria-label="Successiva">
@@ -143,8 +193,8 @@
         <section id="why-us" class="why-us section-padding bg-alt">
             <div class="container">
                 <div class="reveal">
-                    <span class="section-num">[03]</span>
-                    <h2 class="section-title">PERCHÈ SCEGLIERE <br>GOLDEN KEY?</h2>
+                    <span class="section-num" data-i18n="why-num">[03]</span>
+                    <h2 class="section-title" data-i18n="why-title">PERCHÈ SCEGLIERE <br>GOLDEN KEY?</h2>
                 </div>
 
                 <div class="cards-grid">
@@ -152,8 +202,9 @@
                     <div class="feature-card reveal delay-1">
                         <div class="card-num">01</div>
                         <i data-lucide="trending-up" class="card-icon"></i>
-                        <h3 class="card-title">Incrementa i Tuoi Incassi</h3>
-                        <p class="card-text">Valorizziamo il tuo immobile per permetterti di guadagnare fino a 3 volte
+                        <h3 class="card-title" data-i18n="why-card-1-title">Incrementa i Tuoi Incassi</h3>
+                        <p class="card-text" data-i18n="why-card-1-text">Valorizziamo il tuo immobile per permetterti di
+                            guadagnare fino a 3 volte
                             di più rispetto alla locazione tradizionale.</p>
                     </div>
 
@@ -161,8 +212,9 @@
                     <div class="feature-card reveal delay-2">
                         <div class="card-num">02</div>
                         <i data-lucide="shield-check" class="card-icon"></i>
-                        <h3 class="card-title">Stop ai Problemi di Locazione</h3>
-                        <p class="card-text">Dimentica morosità, danni o burocrazia infinita. Ci occupiamo di tutto noi,
+                        <h3 class="card-title" data-i18n="why-card-2-title">Stop ai Problemi di Locazione</h3>
+                        <p class="card-text" data-i18n="why-card-2-text">Dimentica morosità, danni o burocrazia
+                            infinita. Ci occupiamo di tutto noi,
                             con protezione totale tramite OTA.</p>
                     </div>
 
@@ -170,8 +222,9 @@
                     <div class="feature-card reveal delay-3">
                         <div class="card-num">03</div>
                         <i data-lucide="clock" class="card-icon"></i>
-                        <h3 class="card-title">Flessibilità Totale</h3>
-                        <p class="card-text">Nessun vincolo a lungo termine e zero anticipi. Il tuo immobile rimane a
+                        <h3 class="card-title" data-i18n="why-card-3-title">Flessibilità Totale</h3>
+                        <p class="card-text" data-i18n="why-card-3-text">Nessun vincolo a lungo termine e zero anticipi.
+                            Il tuo immobile rimane a
                             tua disposizione quando ne hai bisogno.</p>
                     </div>
                 </div>
@@ -179,7 +232,7 @@
                 <!-- Gold Box -->
                 <div class="price-box reveal delay-4">
                     <div class="price-inner">
-                        <span class="price-label">COSTO DI AVVIAMENTO E GESTIONE:</span>
+                        <span class="price-label" data-i18n="price-label">COSTO DI AVVIAMENTO E GESTIONE:</span>
                         <span class="price-value">€0</span>
                     </div>
                 </div>
@@ -189,21 +242,19 @@
         <!-- [04] INTERMEDIATE CTA -->
         <section id="cta-mid" class="cta-mid reveal">
             <div class="cta-slideshow">
-                <div class="cta-slide active" style="background-image: url('assets/images/cta-bg-1.png');"></div>
-                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-2.png');"></div>
-                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-3.png');"></div>
-                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-4.png');"></div>
-                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-5.png');"></div>
-                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-6.png');"></div>
-                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-7.png');"></div>
-                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-8.png');"></div>
+                <div class="cta-slide active" style="background-image: url('assets/images/cta-bg-1.webp');"></div>
+                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-2.webp');"></div>
+                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-3.webp');"></div>
+                <div class="cta-slide" style="background-image: url('assets/images/cta-bg-4.webp');"></div>
             </div>
             <div class="cta-overlay"></div>
             <div class="container cta-content">
-                <h2 class="cta-title">OTTIENI UNA STIMA <br>DI REDDITIVITÀ</h2>
-                <p class="cta-text">Scopri quanto può rendere il tuo immobile sul mercato del lusso.</p>
+                <h2 class="cta-title" data-i18n="cta-mid-title">OTTIENI UNA STIMA <br>DI REDDITIVITÀ</h2>
+                <p class="cta-text" data-i18n="cta-mid-text">Scopri quanto può rendere il tuo immobile sul mercato del
+                    lusso.</p>
                 <button class="btn-primary"
-                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                    data-i18n="cta-mid-btn">
                     Calcola il Tuo Profitto <span class="arrow">→</span>
                 </button>
             </div>
@@ -213,52 +264,64 @@
         <section id="services" class="services section-padding">
             <div class="container">
                 <div class="reveal text-center">
-                    <span class="section-num">[05]</span>
-                    <h2 class="section-title">I NOSTRI SERVIZI</h2>
+                    <span class="section-num" data-i18n="services-num">[05]</span>
+                    <h2 class="section-title" data-i18n="services-title">I NOSTRI SERVIZI</h2>
                 </div>
 
                 <div class="services-grid reveal delay-1">
                     <!-- Service 1 -->
                     <div class="service-item">
                         <i data-lucide="file-text" class="service-icon"></i>
-                        <h3>Analisi e Burocrazia</h3>
-                        <p>Studio di fattibilità e gestione di tutte le pratiche amministrative.</p>
+                        <h3 data-i18n="service-1-title">Analisi e Burocrazia</h3>
+                        <p data-i18n="service-1-text">Studio di fattibilità e gestione di tutte le pratiche
+                            amministrative.</p>
                     </div>
                     <!-- Service 2 -->
                     <div class="service-item">
                         <i data-lucide="sparkles" class="service-icon"></i>
-                        <h3>Home Staging</h3>
-                        <p>Allestimento professionale per massimizzare l'attrattività dell'immobile.</p>
+                        <h3 data-i18n="service-2-title">Home Staging</h3>
+                        <p data-i18n="service-2-text">Allestimento professionale per massimizzare l'attrattività
+                            dell'immobile.</p>
                     </div>
                     <!-- Service 3 -->
                     <div class="service-item">
                         <i data-lucide="camera" class="service-icon"></i>
-                        <h3>Servizio Fotografico</h3>
-                        <p>Shooting d'autore per far risaltare ogni dettaglio della tua proprietà.</p>
+                        <h3 data-i18n="service-3-title">Servizio Fotografico</h3>
+                        <p data-i18n="service-3-text">Shooting d'autore per far risaltare ogni dettaglio della tua
+                            proprietà.</p>
                     </div>
                     <!-- Service 4 -->
                     <div class="service-item">
                         <i data-lucide="megaphone" class="service-icon"></i>
-                        <h3>Gestione Annunci</h3>
-                        <p>Copywriting e marketing multicanale su tutte le principali piattaforme.</p>
+                        <h3 data-i18n="service-4-title">Gestione Annunci</h3>
+                        <p data-i18n="service-4-text">Copywriting e marketing multicanale su tutte le principali
+                            piattaforme.</p>
                     </div>
                     <!-- Service 5 -->
                     <div class="service-item">
                         <i data-lucide="umbrella" class="service-icon"></i>
-                        <h3>Assicurazione</h3>
-                        <p>Protezione totale contro danni e morosità tramite partnership OTA.</p>
+                        <h3 data-i18n="service-5-title">Assicurazione</h3>
+                        <p data-i18n="service-5-text">Protezione totale contro danni e morosità tramite partnership OTA.
+                        </p>
                     </div>
                     <!-- Service 6 -->
                     <div class="service-item">
                         <i data-lucide="key" class="service-icon"></i>
-                        <h3>Check-in / Out</h3>
-                        <p>Accoglienza calorosa e gestione professionale di ogni ospite.</p>
+                        <h3 data-i18n="service-6-title">Check-in / Out</h3>
+                        <p data-i18n="service-6-text">Accoglienza calorosa e gestione professionale di ogni ospite.</p>
                     </div>
                     <!-- Service 7 -->
                     <div class="service-item">
                         <i data-lucide="droplet" class="service-icon"></i>
-                        <h3>Pulizie e Manutenzione</h3>
-                        <p>Standard di igiene hotel 5 stelle e manutenzione programmata.</p>
+                        <h3 data-i18n="service-7-title">Pulizie e Manutenzione</h3>
+                        <p data-i18n="service-7-text">Standard di igiene hotel 5 stelle e manutenzione programmata.</p>
+                    </div>
+                    <!-- Service 8 -->
+                    <div class="service-item">
+                        <i data-lucide="globe" class="service-icon"></i>
+                        <h3 data-i18n="service-8-title">Siti Web Professionali</h3>
+                        <p data-i18n="service-8-text">Creazione di siti web su misura per valorizzare la tua attività e
+                            generare contatti qualificati.</p>
                     </div>
                 </div>
             </div>
@@ -268,12 +331,12 @@
         <section id="contact" class="contact-section section-padding">
             <div class="contact-slideshow">
                 <div class="contact-slideshow-img active"
-                    style="background-image: url('assets/images/contact-bg-1.png');"></div>
-                <div class="contact-slideshow-img" style="background-image: url('assets/images/contact-bg-2.png');">
+                    style="background-image: url('assets/images/contact-bg-1.webp');"></div>
+                <div class="contact-slideshow-img" style="background-image: url('assets/images/contact-bg-2.webp');">
                 </div>
-                <div class="contact-slideshow-img" style="background-image: url('assets/images/contact-bg-3.png');">
+                <div class="contact-slideshow-img" style="background-image: url('assets/images/contact-bg-3.webp');">
                 </div>
-                <div class="contact-slideshow-img" style="background-image: url('assets/images/contact-bg-4.png');">
+                <div class="contact-slideshow-img" style="background-image: url('assets/images/contact-bg-4.webp');">
                 </div>
             </div>
             <div class="contact-overlay"></div>
@@ -281,48 +344,56 @@
                 <div class="contact-grid">
                     <!-- Left: Why Us List -->
                     <div class="contact-info reveal">
-                        <span class="section-num">[06]</span>
-                        <h2 class="section-title">RICHIEDI UNA STIMA <br>DI REDDITIVITÀ</h2>
+                        <span class="section-num" data-i18n="contact-num">[06]</span>
+                        <h2 class="section-title" data-i18n="contact-title">RICHIEDI UNA STIMA <br>DI REDDITIVITÀ</h2>
                         <ul class="check-list">
-                            <li><i data-lucide="check-circle-2" class="check-icon"></i> Valorizza il tuo immobile in
-                                totale controllo</li>
-                            <li><i data-lucide="check-circle-2" class="check-icon"></i> Previeni la morosità</li>
-                            <li><i data-lucide="check-circle-2" class="check-icon"></i> Opera assicurato</li>
-                            <li><i data-lucide="check-circle-2" class="check-icon"></i> Incrementa notevolmente i tuoi
-                                profitti</li>
-                            <li><i data-lucide="check-circle-2" class="check-icon"></i> Gestione completa senza stress
+                            <li><i data-lucide="check-circle-2" class="check-icon"></i> <span
+                                    data-i18n="contact-check-1">Valorizza il tuo immobile in totale controllo</span>
                             </li>
+                            <li><i data-lucide="check-circle-2" class="check-icon"></i> <span
+                                    data-i18n="contact-check-2">Previeni la morosità</span></li>
+                            <li><i data-lucide="check-circle-2" class="check-icon"></i> <span
+                                    data-i18n="contact-check-3">Opera assicurato</span></li>
+                            <li><i data-lucide="check-circle-2" class="check-icon"></i> <span
+                                    data-i18n="contact-check-4">Incrementa notevolmente i tuoi profitti</span></li>
+                            <li><i data-lucide="check-circle-2" class="check-icon"></i> <span
+                                    data-i18n="contact-check-5">Gestione completa senza stress</span></li>
                         </ul>
                     </div>
 
                     <!-- Right: Form -->
                     <div class="contact-form-box reveal delay-1">
-                        <form action="https://formspree.io/f/your-id" method="POST" class="contact-form">
+                        <form class="contact-form" id="contactForm">
                             <div class="form-group">
-                                <label for="name">Nome Completo</label>
-                                <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome" required>
+                                <label for="name" data-i18n="form-label-name">Nome Completo</label>
+                                <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome"
+                                    data-i18n-placeholder="form-placeholder-name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="email@esempio.it" required>
+                                <label for="email" data-i18n="form-label-email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="email@esempio.it"
+                                    data-i18n-placeholder="form-placeholder-email" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Telefono</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+39 000 000 0000">
+                                <label for="phone" data-i18n="form-label-phone">Telefono</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+39 000 000 0000"
+                                    data-i18n-placeholder="form-placeholder-phone">
                             </div>
                             <div class="form-group">
-                                <label for="message">Messaggio</label>
-                                <textarea id="message" name="message" rows="4"
-                                    placeholder="Parlaci del tuo immobile..."></textarea>
+                                <label for="message" data-i18n="form-label-message">Messaggio</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Parlaci del tuo immobile..."
+                                    data-i18n-placeholder="form-placeholder-message"></textarea>
                             </div>
                             <div class="form-group form-consent">
                                 <label class="checkbox-label">
                                     <input type="checkbox" id="gdpr-consent" name="gdpr-consent" required>
-                                    <span>Ho letto e accetto la <a href="privacy.html" target="_blank">Privacy
+                                    <span data-i18n="form-consent">Ho letto e accetto la <a href="privacy.html"
+                                            target="_blank">Privacy
                                             Policy</a>. Acconsento al trattamento dei miei dati personali.</span>
                                 </label>
                             </div>
-                            <button type="submit" class="btn-primary w-full">Invia Richiesta</button>
+                            <button type="submit" class="btn-primary w-full" data-i18n="form-submit">Invia
+                                Richiesta</button>
                         </form>
                     </div>
                 </div>
@@ -334,22 +405,43 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-top reveal">
-                <h2 class="footer-cta">Pronto a Iniziare? <br><span class="text-accent">Contattaci.</span></h2>
+                <h2 class="footer-cta" data-i18n="footer-cta">Pronto a Iniziare? <br><span
+                        class="text-accent">Contattaci.</span></h2>
                 <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="Golden Key Logo" class="footer-logo-img" width="180"
+                        height="60">
                     <span class="logo-text">GOLDEN<span class="text-accent">KEY</span></span>
                 </div>
             </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/goldenkey_shortrent/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                    </svg>
+                </a>
+            </div>
             <div class="footer-bottom flex-between flex-wrap gap-6">
                 <div class="footer-links flex gap-8">
-                    <a href="#hero">Home</a>
-                    <a href="#services">Servizi</a>
-                    <a href="#contact">Contatti</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="cookie-policy.html">Cookie Policy</a>
+                    <a href="#hero" data-i18n="nav-home">Home</a>
+                    <a href="#services" data-i18n="nav-services">Servizi</a>
+                    <a href="#contact" data-i18n="nav-contact">Contatti</a>
+                    <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+                    <a href="cookie-policy.html" data-i18n="footer-cookie">Cookie Policy</a>
+                    <a href="#" id="openCookiePrefs" data-i18n="footer-manage-cookie">Gestisci Cookie</a>
                 </div>
                 <div class="copyright">
-                    <p>P.IVA: 04107000129 &mdash; &copy; 2025 Golden Key Luxury Short Rent. All rights reserved.</p>
-                    <p class="ai-disclaimer">Alcune immagini presenti su questo sito sono state generate tramite
+                    <p data-i18n="footer-copyright">P.IVA: 04107000129 &mdash; &copy; 2025 Golden Key Luxury Short Rent.
+                        All rights reserved.</p>
+                    <p class="ai-disclaimer" data-i18n="footer-ai">Alcune immagini presenti su questo sito sono state
+                        generate tramite
                         intelligenza artificiale per scopi puramente illustrativi.</p>
                 </div>
             </div>
@@ -359,17 +451,118 @@
     <!-- COOKIE BANNER -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-inner">
-            <p>Questo sito utilizza cookie tecnici per garantire il corretto funzionamento. Per saperne di più, consulta
+            <p data-i18n="cookie-text">Questo sito utilizza cookie tecnici per garantire il corretto funzionamento. Per
+                saperne di più, consulta
                 la nostra <a href="cookie-policy.html">Cookie Policy</a>.</p>
             <div class="cookie-actions">
-                <button class="cookie-btn cookie-reject" id="cookieReject">Rifiuta</button>
-                <button class="cookie-btn cookie-accept" id="cookieAccept">Accetta</button>
+                <button class="cookie-btn cookie-manage" id="cookieManage" data-i18n="cookie-manage">Gestisci
+                    Preferenze</button>
+                <button class="cookie-btn cookie-reject" id="cookieReject" data-i18n="cookie-reject">Rifiuta</button>
+                <button class="cookie-btn cookie-accept" id="cookieAccept" data-i18n="cookie-accept">Accetta
+                    Tutto</button>
+            </div>
+        </div>
+        <!-- Cookie Preferences Panel -->
+        <div class="cookie-preferences" id="cookiePreferences">
+            <div class="cookie-pref-inner">
+                <h3>Gestisci le tue preferenze cookie</h3>
+                <div class="cookie-category">
+                    <div class="cookie-cat-info">
+                        <strong>Cookie Tecnici</strong>
+                        <p>Necessari per il funzionamento del sito. Non possono essere disattivati.</p>
+                    </div>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-cat-info">
+                        <strong>Cookie Analitici</strong>
+                        <p>Ci aiutano a capire come i visitatori interagiscono con il sito.</p>
+                    </div>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookieAnalytics">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-cat-info">
+                        <strong>Cookie di Marketing</strong>
+                        <p>Utilizzati per mostrare annunci pertinenti ai tuoi interessi.</p>
+                    </div>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookieMarketing">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-pref-actions">
+                    <button class="cookie-btn cookie-save" id="cookieSave">Salva Preferenze</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Main Script -->
-    <script src="js/main.js"></script>
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Torna su">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+
+    <!-- Firebase SDK (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js" defer></script>
+    <script src="js/firebase-config.js" defer></script>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="js/translations.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="galleryModal">
+        <div class="modal-overlay" id="galleryOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeGallery" aria-label="Chiudi galleria">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="swiper gallery-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides will be injected or kept static -->
+                    <div class="swiper-slide"><img src="assets/images/gallery/1.webp" alt="Gallery 1" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/2.webp" alt="Gallery 2" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/3.webp" alt="Gallery 3" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/4.webp" alt="Gallery 4" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/5.webp" alt="Gallery 5" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/6.webp" alt="Gallery 6" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/7.webp" alt="Gallery 7" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/8.webp" alt="Gallery 8" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/9.webp" alt="Gallery 9" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/10.webp" alt="Gallery 10" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/11.webp" alt="Gallery 11" loading="lazy"
+                            width="1200" height="900"></div>
+                    <div class="swiper-slide"><img src="assets/images/gallery/12.webp" alt="Gallery 12" loading="lazy"
+                            width="1200" height="900"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

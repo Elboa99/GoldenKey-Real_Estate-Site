@@ -4,3 +4,6 @@ credentials.json
 token.json
 __pycache__/
 *.pyc
+
+# Firebase credentials (API keys)
+goldenkey-site/js/firebase-config.js

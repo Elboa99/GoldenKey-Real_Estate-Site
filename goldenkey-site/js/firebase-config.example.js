@@ -2,21 +2,24 @@
  * Golden Key — Firebase Configuration
  * 
  * ISTRUZIONI:
- * 1. Vai su https://console.firebase.google.com/
- * 2. Crea un nuovo progetto (o seleziona uno esistente)
- * 3. Vai su "Impostazioni Progetto" > "Le tue app" > Aggiungi app Web
- * 4. Copia i valori del tuo firebaseConfig qui sotto
- * 5. Attiva Firestore Database dalla console Firebase
+ * 1. Copia questo file come "firebase-config.js" (senza .example)
+ * 2. Vai su https://console.firebase.google.com/
+ * 3. Crea un nuovo progetto (o seleziona uno esistente)
+ * 4. Vai su "Impostazioni Progetto" > "Le tue app" > Aggiungi app Web
+ * 5. Copia i valori del tuo firebaseConfig qui sotto
+ * 6. Attiva Firestore Database dalla console Firebase
+ * 
+ * ⚠️ NON COMMITTARE firebase-config.js su Git! È già nel .gitignore.
  */
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBZAzWviY8LDznBbVh9jHG1vWPwLjcaioY",
-    authDomain: "goldenkey-c35e6.firebaseapp.com",
-    projectId: "goldenkey-c35e6",
-    storageBucket: "goldenkey-c35e6.firebasestorage.app",
-    messagingSenderId: "471004663315",
-    appId: "1:471004663315:web:0d61179f6df2a7ddab79e6",
-    measurementId: "G-LK3S9JG5V8"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.firebasestorage.app",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID",
+    measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 // Initialize Firebase
@@ -42,4 +45,3 @@ const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
 if (typeof emailjs !== 'undefined') {
     emailjs.init(EMAILJS_PUBLIC_KEY);
 }
-

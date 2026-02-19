@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Fonts (Optimization: Loaded in HTML with display=swap) -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Plus+Jakarta+Sans:wght@200..800&display=swap">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
 
@@ -48,17 +52,36 @@
     <main>
         <!-- HERO SECTION: ULTRA-FOCUSED -->
         <section id="hero" class="hero landing-hero">
-            <div class="hero-video-container">
-                <video autoplay muted loop playsinline class="hero-video active" fetchpriority="high">
+            <div class="hero-bg">
+                <video autoplay muted playsinline poster="assets/images/hero.webp" class="hero-video active"
+                    id="heroVideo1" fetchpriority="high" data-src-hd="assets/images/hero-1-hd.mp4">
                     <source src="assets/images/hero-1.mp4" type="video/mp4">
                 </video>
+                <video muted playsinline preload="none" class="hero-video" id="heroVideo2"
+                    data-src="assets/images/hero-2.mp4" data-src-hd="assets/images/hero-2-hd.mp4"></video>
+                <video muted playsinline preload="none" class="hero-video" id="heroVideo3"
+                    data-src="assets/images/hero-3.mp4" data-src-hd="assets/images/hero-3-hd.mp4"></video>
+                <video muted playsinline preload="none" class="hero-video" id="heroVideo4"
+                    data-src="assets/images/hero-4.mp4" data-src-hd="assets/images/hero-4-hd.mp4"></video>
+                <video muted playsinline preload="none" class="hero-video" id="heroVideo5"
+                    data-src="assets/images/hero-5.mp4" data-src-hd="assets/images/hero-5-hd.mp4"></video>
+                <!-- Fallback image for slow connections -->
+                <img src="assets/images/hero.webp" alt="Luxury Villa" class="hero-image hero-fallback" width="1920"
+                    height="1080">
+                <div class="hero-overlay"></div>
             </div>
-            <div class="hero-overlay"></div>
 
             <div class="container hero-content">
                 <span class="hero-num" data-i18n="hero-num">[01]</span>
-                <h1 class="reveal" data-i18n="landing-hero-title">
-                    Siamo la soluzione Anti-Morosità per la tua Proprietà
+                <h1 class="text-reveal">
+                    <span class="word" style="--i:0" data-i18n="landing-title-1">SIAMO</span>
+                    <span class="word" style="--i:1" data-i18n="landing-title-2">LA</span>
+                    <span class="word" style="--i:2" data-i18n="landing-title-3">SOLUZIONE</span>
+                    <span class="word gold-word" style="--i:3" data-i18n="landing-title-4">ANTI-MOROSITÀ</span>
+                    <span class="word" style="--i:4" data-i18n="landing-title-5">PER</span>
+                    <span class="word" style="--i:5" data-i18n="landing-title-6">LA</span>
+                    <span class="word" style="--i:6" data-i18n="landing-title-7">TUA</span>
+                    <span class="word" style="--i:7" data-i18n="landing-title-8">PROPRIETÀ</span>
                 </h1>
                 <p class="reveal" data-i18n="landing-hero-subtitle">
                     Gestione professionale di immobili destinati agli affitti a breve termine.
@@ -80,14 +103,53 @@
                     <img src="assets/images/logo-airbnb.svg" alt="Airbnb" class="partner-icon">
                     <img src="assets/images/logo-booking.svg" alt="Booking" class="partner-icon">
                     <img src="assets/images/logo-vrbo.svg" alt="Vrbo" class="partner-icon">
+                    <img src="assets/images/logo-expedia.svg" alt="Expedia" class="partner-icon">
+                </div>
+
+                <!-- Statistics Counters -->
+                <div class="landing-stats reveal mt-12">
+                    <div class="stat-item">
+                        <span class="stat-num">+50</span>
+                        <span class="stat-label" data-i18n="landing-stat-1-label">Immobili Gestiti</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">98%</span>
+                        <span class="stat-label" data-i18n="landing-stat-2-label">Tasso di Occupazione</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">3x</span>
+                        <span class="stat-label" data-i18n="landing-stat-3-label">Rendita vs Affitto Tradizionale</span>
+                    </div>
                 </div>
 
                 <div class="managed-info reveal text-center mt-12">
-                    <h3 class="managed-title" data-i18n="sp-counter-label">Immobili Gestiti in Italia e all'Estero</h3>
                     <p class="selection-text" data-i18n="landing-selection-text">
                         Selezioniamo esclusivamente immobili con un’elevata potenzialità nel mercato degli affitti
                         brevi, al fine di garantire la massima qualità e un rendimento ottimale in ogni progetto.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VSL SECTION -->
+        <section class="vsl-section section-padding bg-dark">
+            <div class="container text-center">
+                <h2 class="vsl-title reveal" data-i18n="landing-vsl-title">SCOPRI COME <span
+                        class="gold-word">FUNZIONA</span></h2>
+                <p class="vsl-subtitle reveal" data-i18n="landing-vsl-subtitle">Guarda come trasformiamo il tuo immobile
+                    in una rendita di lusso in soli 2 minuti.</p>
+                <div class="vsl-container reveal">
+                    <video controls preload="metadata" class="vsl-video">
+                        <source src="assets/images/landing-vsl.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="vsl-cta reveal">
+                    <button class="btn-primary btn-shimmer"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                        data-i18n="landing-vsl-cta">
+                        Richiedi la Tua Stima Gratuita <span class="arrow">→</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -99,21 +161,38 @@
                     <div class="feature-card reveal">
                         <i data-lucide="trending-up" class="card-icon"></i>
                         <h3 class="card-title" data-i18n="landing-why-1-title">Massimo Guadagno</h3>
-                        <p class="card-text" data-i18n="landing-why-1-text">Fino a 3 volte più di un affitto
-                            tradizionale.
-                        </p>
+                        <p class="card-text" data-i18n="landing-why-1-text">Fino al 300% in più rispetto all'affitto
+                            tradizionale. Ottimizziamo prezzi e stagionalità per massimizzare ogni singola notte.</p>
                     </div>
                     <div class="feature-card reveal delay-1">
                         <i data-lucide="shield-check" class="card-icon"></i>
                         <h3 class="card-title" data-i18n="landing-why-2-title">Zero Rischi</h3>
-                        <p class="card-text" data-i18n="landing-why-2-text">Protezione totale contro danni e morosità.
-                        </p>
+                        <p class="card-text" data-i18n="landing-why-2-text">Assicurazione completa tramite partnership
+                            OTA. Protezione totale contro danni, morosità e cancellazioni.</p>
                     </div>
                     <div class="feature-card reveal delay-2">
                         <i data-lucide="key" class="card-icon"></i>
                         <h3 class="card-title" data-i18n="landing-why-3-title">Gestione Passiva</h3>
-                        <p class="card-text" data-i18n="landing-why-3-text">Pensiamo noi a tutto, tu ricevi solo i
-                            bonifici.</p>
+                        <p class="card-text" data-i18n="landing-why-3-text">Check-in, pulizie, manutenzione e
+                            comunicazione ospiti 7/7. Tu ricevi solo i bonifici.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="testimonial-section section-padding">
+            <div class="container text-center">
+                <div class="testimonial-card reveal">
+                    <i data-lucide="quote" class="testimonial-icon"></i>
+                    <blockquote class="testimonial-quote" data-i18n="landing-testimonial-1">
+                        "Da quando collaboro con Golden Key, il mio appartamento a Milano genera il triplo di prima.
+                        Zero problemi, zero stress. Ricevo solo i bonifici ogni mese."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name" data-i18n="landing-testimonial-1-name">Marco R.</span>
+                        <span class="testimonial-role" data-i18n="landing-testimonial-1-role">Proprietario —
+                            Milano</span>
                     </div>
                 </div>
             </div>
@@ -162,6 +241,10 @@
                             </div>
                             <button type="submit" class="btn-primary w-full" data-i18n="landing-form-submit">VOGLIO LA
                                 MIA STIMA GRATUITA</button>
+                            <div class="form-urgency">
+                                <i data-lucide="clock" class="urgency-icon"></i>
+                                <span data-i18n="landing-form-urgency">Risposta garantita entro 24h</span>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -190,7 +273,13 @@
                     </svg>
                 </a>
             </div>
-            <p class="copyright">&copy; 2025 Golden Key Luxury Short Rent. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+                <span class="legal-divider">|</span>
+                <a href="cookie-policy.html" data-i18n="footer-cookie">Cookie Policy</a>
+            </div>
+            <p class="copyright" data-i18n="footer-copyright">P.IVA: 04107000129 &mdash; &copy; 2025 Golden Key Luxury
+                Short Rent. All rights reserved.</p>
         </div>
     </footer>
 
@@ -206,6 +295,12 @@
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="js/translations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <!-- SVG Sharpening Filter for Low-Res Videos -->
+    <svg style="display:none;">
+        <filter id="luxury-sharpen">
+            <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 5 -1 0 -1 0" />
+        </filter>
+    </svg>
 </body>
 
 </html>

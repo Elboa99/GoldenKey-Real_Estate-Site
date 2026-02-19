@@ -565,23 +565,60 @@ function initCtaSlideshow() {
 
 /**
  * Hero Video Rotation — crossfade between multiple hero background videos
+ * ELITE EDITION: Adaptive Smart Loading (SD for Mobile, HD for Desktop)
  */
 function initHeroVideoRotation() {
     const videos = document.querySelectorAll('.hero-video');
-    if (videos.length < 2) return;
+    if (videos.length === 0) return;
 
-    // Helper to load video source on demand (ELITE VERSION: Dynamic Injection)
+    // Detection: Is the user on a high-performance/large screen device?
+    const isHighEnd = window.innerWidth > 1024;
+
+    // Helper: Select best source based on device
+    function getBestSource(video) {
+        if (isHighEnd && video.dataset.srcHd) {
+            return video.dataset.srcHd;
+        }
+        return video.dataset.src || null;
+    }
+
+    // Helper to load video source on demand (Adaptive HD version)
     function loadVideo(video) {
-        if (!video.dataset.src) return; // Already loaded or no source
+        const bestSrc = getBestSource(video);
+        if (!bestSrc) return;
 
-        // Create and append source element if it doesn't exist
-        if (!video.querySelector('source')) {
+        // Check if we need to inject/change the source
+        const existingSource = video.querySelector('source');
+
+        if (!existingSource) {
+            // New injection
             const source = document.createElement('source');
-            source.src = video.dataset.src;
+            source.src = bestSrc;
             source.type = 'video/mp4';
             video.appendChild(source);
             video.load();
-            video.removeAttribute('data-src');
+        } else if (existingSource.src.indexOf(bestSrc) === -1) {
+            // Upgrade existing source (e.g., for the first video)
+            existingSource.src = bestSrc;
+            video.load();
+            if (video.classList.contains('active')) {
+                video.play().catch(e => console.warn("Autoplay interrupted during upgrade:", e));
+            }
+        }
+
+        // Cleanup to prevent re-runs
+        video.removeAttribute('data-src');
+        video.removeAttribute('data-src-hd');
+    }
+
+    // INITIAL ACTION: Upgrade the FIRST video if we are on high-end
+    if (videos[0]) {
+        // The first video often has a hardcoded source in HTML for LCP
+        // We only "upgrade" it if isHighEnd is true and it has data-src-hd
+        const firstVideo = videos[0];
+        if (isHighEnd && firstVideo.dataset.srcHd) {
+            // Delay slightly to not compete with initial page paint
+            setTimeout(() => loadVideo(firstVideo), 1000);
         }
     }
 
@@ -609,7 +646,11 @@ function initHeroVideoRotation() {
 
             // Reset and play next video
             nextVideo.currentTime = 0;
-            nextVideo.play();
+            nextVideo.play().catch(e => {
+                // Handle autoplay block
+                console.warn("Autoplay block on transition:", e);
+                nextVideo.classList.add('active'); // Still show it even if paused
+            });
             nextVideo.classList.add('active');
         });
     });

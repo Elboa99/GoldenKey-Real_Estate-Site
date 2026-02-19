@@ -115,18 +115,34 @@ const translations = {
         // Actions
         "show-more": "Mostra altro",
 
-        // Landing Specific
-        "landing-hero-title": "Siamo la soluzione <span class=\"text-accent\">Anti-Morosità</span> per la tua Proprietà",
+        "landing-title-1": "SIAMO",
+        "landing-title-2": "LA",
+        "landing-title-3": "SOLUZIONE",
+        "landing-title-4": "ANTI-MOROSITÀ",
+        "landing-title-5": "PER",
+        "landing-title-6": "LA",
+        "landing-title-7": "TUA",
+        "landing-title-8": "PROPRIETÀ",
         "landing-hero-subtitle": "Gestione professionale di immobili destinati agli affitti a breve termine. Trasforma la tua proprietà in un <strong>asset di alto valore</strong>, con ZERO ANTICIPI e ZERO COSTI FISSI",
         "landing-selection-text": "Selezioniamo esclusivamente immobili con un’elevata potenzialità nel mercato degli affitti brevi, al fine di garantire la massima qualità e un rendimento ottimale in ogni progetto.",
         "landing-hero-cta": "Calcola il tuo Guadagno",
         "landing-why-1-title": "Massimo Guadagno",
-        "landing-why-1-text": "Fino a 3 volte più di un affitto tradizionale.",
+        "landing-why-1-text": "Fino al 300% in più rispetto all'affitto tradizionale. Ottimizziamo prezzi e stagionalità per massimizzare ogni singola notte.",
         "landing-why-2-title": "Zero Rischi",
-        "landing-why-2-text": "Protezione totale contro danni e morosità.",
+        "landing-why-2-text": "Assicurazione completa tramite partnership OTA. Protezione totale contro danni, morosità e cancellazioni.",
         "landing-why-3-title": "Gestione Passiva",
-        "landing-why-3-text": "Pensiamo noi a tutto, tu ricevi solo i bonifici.",
-        "landing-form-submit": "VOGLIO LA MIA STIMA GRATUITA"
+        "landing-why-3-text": "Check-in, pulizie, manutenzione e comunicazione ospiti 7/7. Tu ricevi solo i bonifici.",
+        "landing-form-submit": "VOGLIO LA MIA STIMA GRATUITA",
+        "landing-stat-1-label": "Immobili Gestiti",
+        "landing-stat-2-label": "Tasso di Occupazione",
+        "landing-stat-3-label": "Rendita vs Affitto Tradizionale",
+        "landing-vsl-title": "SCOPRI COME <span class=\"gold-word\">FUNZIONA</span>",
+        "landing-vsl-subtitle": "Guarda come trasformiamo il tuo immobile in una rendita di lusso in soli 2 minuti.",
+        "landing-vsl-cta": "Richiedi la Tua Stima Gratuita",
+        "landing-testimonial-1": "\"Da quando collaboro con Golden Key, il mio appartamento a Milano genera il triplo di prima. Zero problemi, zero stress. Ricevo solo i bonifici ogni mese.\"",
+        "landing-testimonial-1-name": "Marco R.",
+        "landing-testimonial-1-role": "Proprietario — Milano",
+        "landing-form-urgency": "Risposta garantita entro 24h"
     },
     en: {
         // Navbar
@@ -240,18 +256,34 @@ const translations = {
         // Actions
         "show-more": "Show more",
 
-        // Landing Specific
-        "landing-hero-title": "The <span class=\"text-accent\">Zero-Risk</span> Solution for Your Luxury Property",
+        "landing-title-1": "THE",
+        "landing-title-2": "ZERO-RISK",
+        "landing-title-3": "SOLUTION",
+        "landing-title-4": "FOR",
+        "landing-title-5": "YOUR",
+        "landing-title-6": "LUXURY",
+        "landing-title-7": "PROPERTY",
+        "landing-title-8": "",
         "landing-hero-subtitle": "Professional management for elite short-term rentals. Transform your property into a <strong>high-value asset</strong> with NO UPFRONT COSTS.",
         "landing-selection-text": "We exclusively select properties with exceptional potential in the short-term market to guarantee premium quality and optimal returns.",
         "landing-hero-cta": "Calculate Your Returns",
         "landing-why-1-title": "Premium Earnings",
-        "landing-why-1-text": "Up to 3 times the revenue of traditional rentals.",
+        "landing-why-1-text": "Up to 300% more than traditional leasing. We optimize pricing and seasonality to maximize every single night.",
         "landing-why-2-title": "Zero Risk",
-        "landing-why-2-text": "Comprehensive protection against damages and defaults.",
+        "landing-why-2-text": "Full insurance through OTA partnerships. Complete protection against damages, defaults, and cancellations.",
         "landing-why-3-title": "Passive Income",
-        "landing-why-3-text": "We manage every detail; you simply receive the payments.",
-        "landing-form-submit": "GET MY COMPLIMENTARY ESTIMATE"
+        "landing-why-3-text": "Check-in, cleaning, maintenance, and guest communication 7/7. You simply receive the payments.",
+        "landing-form-submit": "GET MY COMPLIMENTARY ESTIMATE",
+        "landing-stat-1-label": "Properties Managed",
+        "landing-stat-2-label": "Occupancy Rate",
+        "landing-stat-3-label": "Return vs Traditional Rent",
+        "landing-vsl-title": "SEE HOW IT <span class=\"gold-word\">WORKS</span>",
+        "landing-vsl-subtitle": "Watch how we transform your property into a luxury revenue stream in just 2 minutes.",
+        "landing-vsl-cta": "Request Your Free Estimate",
+        "landing-testimonial-1": "\"Since partnering with Golden Key, my Milan apartment generates triple the income. Zero problems, zero stress. I just receive payments every month.\"",
+        "landing-testimonial-1-name": "Marco R.",
+        "landing-testimonial-1-role": "Property Owner — Milan",
+        "landing-form-urgency": "Guaranteed response within 24h"
     }
 };
 

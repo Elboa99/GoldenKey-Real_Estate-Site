@@ -51,17 +51,17 @@
     <section id="hero" class="hero">
         <div class="hero-bg">
             <video autoplay muted playsinline poster="assets/images/hero.webp" class="hero-video active" id="heroVideo1"
-                fetchpriority="high">
+                fetchpriority="high" data-src-hd="assets/images/hero-1-hd.mp4">
                 <source src="assets/images/hero-1.mp4" type="video/mp4">
             </video>
             <video muted playsinline preload="none" class="hero-video" id="heroVideo2"
-                data-src="assets/images/hero-2.mp4"></video>
+                data-src="assets/images/hero-2.mp4" data-src-hd="assets/images/hero-2-hd.mp4"></video>
             <video muted playsinline preload="none" class="hero-video" id="heroVideo3"
-                data-src="assets/images/hero-3.mp4"></video>
+                data-src="assets/images/hero-3.mp4" data-src-hd="assets/images/hero-3-hd.mp4"></video>
             <video muted playsinline preload="none" class="hero-video" id="heroVideo4"
-                data-src="assets/images/hero-4.mp4"></video>
+                data-src="assets/images/hero-4.mp4" data-src-hd="assets/images/hero-4-hd.mp4"></video>
             <video muted playsinline preload="none" class="hero-video" id="heroVideo5"
-                data-src="assets/images/hero-5.mp4"></video>
+                data-src="assets/images/hero-5.mp4" data-src-hd="assets/images/hero-5-hd.mp4"></video>
             <!-- Fallback image for slow connections -->
             <img src="assets/images/hero.webp" alt="Luxury Villa" class="hero-image hero-fallback" width="1920"
                 height="1080">
@@ -566,6 +566,12 @@
             </div>
         </div>
     </div>
+    <!-- SVG Sharpening Filter for Low-Res Videos -->
+    <svg style="display:none;">
+        <filter id="luxury-sharpen">
+            <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 5 -1 0 -1 0" />
+        </filter>
+    </svg>
 </body>
 
 </html>

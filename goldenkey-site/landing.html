@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Golden Key Luxury Short Rent - Trasforma il tuo immobile in una rendita passiva di lusso. Gestione completa, zero pensieri.">
-    <meta name="keywords" content="luxury short rent, gestione immobili lusso, rendita passiva, golden key landing">
-    <title>Golden Key | Massimizza la tua Rendita Immobiliare</title>
+        content="Goldenkey Luxury Short Rent - Trasforma il tuo immobile in una rendita passiva di lusso. Gestione completa, zero pensieri.">
+    <meta name="keywords" content="luxury short rent, gestione immobili lusso, rendita passiva, goldenkey landing">
+    <title>Goldenkey | Massimizza la tua Rendita Immobiliare</title>
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://unpkg.com">
@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Plus+Jakarta+Sans:wght@200..800&display=swap">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo-gk.png">
 
     <!-- Preload Hero Resources -->
     <link rel="preload" href="assets/images/hero-video-1.mp4" as="video" type="video/mp4">
@@ -39,7 +39,7 @@
     <header class="navbar landing-navbar" id="navbar">
         <div class="container navbar-inner">
             <a href="landing.html" class="navbar-logo">
-                <img src="assets/images/logo.png" alt="Golden Key Logo">
+                <img src="assets/images/logo-gk.png" alt="Goldenkey Logo">
             </a>
             <div class="nav-lang-switcher">
                 <button class="lang-btn active" data-lang="it">IT</button>
@@ -53,21 +53,24 @@
         <!-- HERO SECTION: ULTRA-FOCUSED -->
         <section id="hero" class="hero landing-hero">
             <div class="hero-bg">
-                <video autoplay muted playsinline poster="assets/images/hero.webp" class="hero-video active"
-                    id="heroVideo1" fetchpriority="high" data-src-hd="assets/images/hero-1-hd.mp4">
-                    <source src="assets/images/hero-1.mp4" type="video/mp4">
+                <video autoplay muted playsinline preload="auto" class="hero-video active" id="heroVideo1"
+                    fetchpriority="high">
+                    <source src="assets/videos/hero-1.mp4" type="video/mp4">
                 </video>
-                <video muted playsinline preload="none" class="hero-video" id="heroVideo2"
-                    data-src="assets/images/hero-2.mp4" data-src-hd="assets/images/hero-2-hd.mp4"></video>
-                <video muted playsinline preload="none" class="hero-video" id="heroVideo3"
-                    data-src="assets/images/hero-3.mp4" data-src-hd="assets/images/hero-3-hd.mp4"></video>
-                <video muted playsinline preload="none" class="hero-video" id="heroVideo4"
-                    data-src="assets/images/hero-4.mp4" data-src-hd="assets/images/hero-4-hd.mp4"></video>
-                <video muted playsinline preload="none" class="hero-video" id="heroVideo5"
-                    data-src="assets/images/hero-5.mp4" data-src-hd="assets/images/hero-5-hd.mp4"></video>
-                <!-- Fallback image for slow connections -->
+                <video muted playsinline preload="none" class="hero-video" id="heroVideo2">
+                    <source src="assets/videos/hero-2.mp4" type="video/mp4">
+                </video>
+                <video muted playsinline preload="none" class="hero-video" id="heroVideo3">
+                    <source src="assets/videos/hero-3.mp4" type="video/mp4">
+                </video>
+                <video muted playsinline preload="none" class="hero-video" id="heroVideo4">
+                    <source src="assets/videos/hero-4.mp4" type="video/mp4">
+                </video>
+                <video muted playsinline preload="none" class="hero-video" id="heroVideo5">
+                    <source src="assets/videos/hero-5.mp4" type="video/mp4">
+                </video>
                 <img src="assets/images/hero.webp" alt="Luxury Villa" class="hero-image hero-fallback" width="1920"
-                    height="1080">
+                    height="1080" style="display:none;">
                 <div class="hero-overlay"></div>
             </div>
 
@@ -186,7 +189,7 @@
                 <div class="testimonial-card reveal">
                     <i data-lucide="quote" class="testimonial-icon"></i>
                     <blockquote class="testimonial-quote" data-i18n="landing-testimonial-1">
-                        "Da quando collaboro con Golden Key, il mio appartamento a Milano genera il triplo di prima.
+                        "Da quando collaboro con Goldenkey, il mio appartamento a Milano genera il triplo di prima.
                         Zero problemi, zero stress. Ricevo solo i bonifici ogni mese."
                     </blockquote>
                     <div class="testimonial-author">
@@ -202,7 +205,21 @@
         <section id="contact" class="contact-section section-padding">
             <!-- Background Slideshow logic stays same -->
             <div class="contact-slideshow">
-                <img src="assets/images/cta-bg-1.webp" class="contact-slideshow-img active" alt="Luxury Property">
+                <img src="assets/images/contact/slide-1.webp" class="contact-slideshow-img active" alt="Property 1">
+                <img src="assets/images/contact/slide-2.webp" class="contact-slideshow-img" alt="Property 2">
+                <img src="assets/images/contact/slide-3.webp" class="contact-slideshow-img" alt="Property 3">
+                <img src="assets/images/contact/slide-4.webp" class="contact-slideshow-img" alt="Property 4">
+                <img src="assets/images/contact/slide-5.webp" class="contact-slideshow-img" alt="Property 5">
+                <img src="assets/images/contact/slide-6.webp" class="contact-slideshow-img" alt="Property 6">
+                <img src="assets/images/contact/slide-7.webp" class="contact-slideshow-img" alt="Property 7">
+                <img src="assets/images/contact/slide-8.webp" class="contact-slideshow-img" alt="Property 8">
+                <img src="assets/images/contact/slide-9.webp" class="contact-slideshow-img" alt="Property 9">
+                <img src="assets/images/contact/slide-10.webp" class="contact-slideshow-img" alt="Property 10">
+                <img src="assets/images/contact/slide-11.webp" class="contact-slideshow-img" alt="Property 11">
+                <img src="assets/images/contact/slide-13.webp" class="contact-slideshow-img" alt="Property 13">
+                <img src="assets/images/contact/slide-14.webp" class="contact-slideshow-img" alt="Property 14">
+                <img src="assets/images/contact/slide-15.webp" class="contact-slideshow-img" alt="Property 15">
+                <img src="assets/images/contact/slide-17.webp" class="contact-slideshow-img" alt="Property 17">
             </div>
             <div class="contact-overlay"></div>
 
@@ -255,22 +272,15 @@
     <footer class="footer landing-footer">
         <div class="container text-center">
             <div class="footer-logo mb-6 justify-center">
-                <img src="assets/images/logo.png" alt="Golden Key Logo" height="40">
-                <span class="logo-text">GOLDEN<span class="text-accent">KEY</span></span>
+                <img src="assets/images/logo-gk.png" alt="Goldenkey Logo" height="40">
             </div>
             <div class="footer-socials">
+                <a href="https://wa.me/393883030552" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i data-lucide="message-circle"></i>
+                </a>
                 <a href="https://www.instagram.com/goldenkey_shortrent/" target="_blank" rel="noopener noreferrer"
                     aria-label="Instagram">
                     <i data-lucide="instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <i data-lucide="facebook"></i>
-                </a>
-                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-                    </svg>
                 </a>
             </div>
             <div class="footer-legal">
@@ -278,8 +288,9 @@
                 <span class="legal-divider">|</span>
                 <a href="cookie-policy.html" data-i18n="footer-cookie">Cookie Policy</a>
             </div>
-            <p class="copyright" data-i18n="footer-copyright">P.IVA: 04107000129 &mdash; &copy; 2025 Golden Key Luxury
-                Short Rent. All rights reserved.</p>
+            <p class="copyright" data-i18n="footer-copyright">GoldenKey è un marchio di Lux Florental srl - P.iva
+                14530200964/04107000129 - P.zza Vetra, 17 Milano 20123 - &copy; 2026 Lux Florental srl. All rights
+                reserved.</p>
         </div>
     </footer>
 
@@ -295,9 +306,9 @@
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="js/translations.js" defer></script>
     <script src="js/main.js" defer></script>
-    <!-- SVG Sharpening Filter for Low-Res Videos -->
+    <!-- SVG Sharpening Filter -->
     <svg style="display:none;">
-        <filter id="luxury-sharpen">
+        <filter id="gk-sharpen">
             <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 5 -1 0 -1 0" />
         </filter>
     </svg>

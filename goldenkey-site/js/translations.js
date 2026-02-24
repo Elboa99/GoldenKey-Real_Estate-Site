@@ -1,6 +1,6 @@
 /**
  * Golden Key - Translation Dictionary
- * Refined for a professional, high-end luxury brand experience.
+ * Refined for a professional brand experience.
  */
 const translations = {
     it: {
@@ -18,7 +18,7 @@ const translations = {
         "hero-title-4": "IMMOBILE",
         "hero-title-5": "IN",
         "hero-title-6": "RENDITA",
-        "hero-subtitle": "Gestione professionale di immobili di prestigio per affitti brevi.",
+        "hero-subtitle": "Trasformiamo la tua proprietà vetrina in un asset solido, libero da vincoli, capace di triplicare le rendite.",
         "hero-accent": "Zero costi fissi.",
         "hero-footer": "Più rendite e meno pensieri!",
         "hero-cta": "Richiedi una Stima Gratuita",
@@ -26,7 +26,7 @@ const translations = {
 
         // Social Proof
         "sp-num": "[02]",
-        "sp-title": "ECCELLENZA <br>COMPROVATA",
+        "sp-title": "SERVIZIO <br>COMPROVATO",
         "sp-counter-label": "Immobili Gestiti in Italia e all'Estero",
         "sp-description": "La nostra selezione curata di proprietà riflette il nostro impegno per la qualità e il rendimento costante.",
         "sp-reviews-title": "COSA DICONO I NOSTRI OSPITI",
@@ -44,7 +44,7 @@ const translations = {
 
         // Mid CTA
         "cta-mid-title": "OTTIENI UNA STIMA <br>DI REDDITIVITÀ",
-        "cta-mid-text": "Scopri quanto può rendere il tuo immobile sul mercato del lusso.",
+        "cta-mid-text": "Scopri quanto può rendere il tuo immobile sul mercato.",
         "cta-mid-btn": "Calcola il Tuo Profitto",
 
         // Services
@@ -63,7 +63,7 @@ const translations = {
         "service-6-title": "Check-in / Out",
         "service-6-text": "Accoglienza calorosa e gestione professionale di ogni ospite.",
         "service-7-title": "Pulizie e Manutenzione",
-        "service-7-text": "Standard di igiene hotel 5 stelle e manutenzione programmata.",
+        "service-7-text": "Standard di igiene elevati e manutenzione programmata.",
         "service-8-title": "Siti Web Professionali",
         "service-8-text": "Creazione di siti web su misura per valorizzare la tua attività e generare contatti qualificati.",
 
@@ -92,7 +92,9 @@ const translations = {
 
         // Footer
         "footer-cta": "Pronto a Iniziare? <br><span class=\"text-accent\">Contattaci.</span>",
-        "footer-copyright": "P.IVA: 04107000129 &mdash; &copy; 2025 Golden Key Luxury Short Rent. All rights reserved.",
+        "footer-copyright": "P.IVA: 04107000129 - ©2026 Lux Florental srl. All rights reserved",
+        "footer-legal": "GoldenKey è un marchio di Lux Florental srl - P.iva 14530200964 - 04107000129 - P.zza Vetra, 17 Milano 20123",
+        "footer-contact-info": "GoldenKey è un marchio di Lux Florental srl - P.iva 14530200964 - 04107000129 - P.zza Vetra, 17 Milano 20123 - amministrazione@goldenkeyshortrent.com - +39 3883030552",
         "footer-ai": "Alcune immagini presenti su questo sito sono state generate tramite intelligenza artificiale per scopi puramente illustrativi.",
         "footer-privacy": "Privacy Policy",
         "footer-cookie": "Cookie Policy",
@@ -137,9 +139,9 @@ const translations = {
         "landing-stat-2-label": "Tasso di Occupazione",
         "landing-stat-3-label": "Rendita vs Affitto Tradizionale",
         "landing-vsl-title": "SCOPRI COME <span class=\"gold-word\">FUNZIONA</span>",
-        "landing-vsl-subtitle": "Guarda come trasformiamo il tuo immobile in una rendita di lusso in soli 2 minuti.",
+        "landing-vsl-subtitle": "Guarda come trasformiamo il tuo immobile in una rendita solida in soli 2 minuti.",
         "landing-vsl-cta": "Richiedi la Tua Stima Gratuita",
-        "landing-testimonial-1": "\"Da quando collaboro con Golden Key, il mio appartamento a Milano genera il triplo di prima. Zero problemi, zero stress. Ricevo solo i bonifici ogni mese.\"",
+        "landing-testimonial-1": "\"Da quando collaboro con Goldenkey, il mio appartamento a Milano genera il triplo di prima. Zero problemi, zero stress. Ricevo solo i bonifici ogni mese.\"",
         "landing-testimonial-1-name": "Marco R.",
         "landing-testimonial-1-role": "Proprietario — Milano",
         "landing-form-urgency": "Risposta garantita entro 24h"
@@ -148,7 +150,7 @@ const translations = {
         // Navbar
         "nav-home": "Home",
         "nav-portfolio": "Portfolio",
-        "nav-why-us": "Why Golden Key",
+        "nav-why-us": "Why Goldenkey",
         "nav-services": "Services",
         "nav-contact": "Contact Us",
 
@@ -157,9 +159,9 @@ const translations = {
         "hero-title-2": "YOUR",
         "hero-title-3": "PROPERTY",
         "hero-title-4": "INTO",
-        "hero-title-5": "ELITE",
+        "hero-title-5": "SOLID",
         "hero-title-6": "REVENUE",
-        "hero-subtitle": "Professional management of luxury properties for high-yield short-term rentals.",
+        "hero-subtitle": "We transform your showcase property into a solid asset, free from constraints, capable of tripling your returns.",
         "hero-accent": "Zero fixed costs.",
         "hero-footer": "Maximize returns, minimize concerns.",
         "hero-cta": "Get a Complimentary Estimate",
@@ -167,9 +169,9 @@ const translations = {
 
         // Social Proof
         "sp-num": "[02]",
-        "sp-title": "PROVEN <br>EXCELLENCE",
-        "sp-counter-label": "Premier Properties Managed Internationally",
-        "sp-description": "Our curated selection of high-end properties reflects our commitment to superior quality and consistent investor returns.",
+        "sp-title": "PROVEN <br>RESULTS",
+        "sp-counter-label": "Properties Managed Internationally",
+        "sp-description": "Our selection of properties reflects our commitment to quality and consistent investor returns.",
         "sp-reviews-title": "WHAT OUR GUESTS SAY",
 
         // Why Us
@@ -185,7 +187,7 @@ const translations = {
 
         // Mid CTA
         "cta-mid-title": "GET A PROFITABILITY <br>ESTIMATE",
-        "cta-mid-text": "Discover the true earning potential of your property in the luxury market.",
+        "cta-mid-text": "Discover the true earning potential of your property on the short-term rental market.",
         "cta-mid-btn": "Calculate Your Profit",
 
         // Services
@@ -195,18 +197,18 @@ const translations = {
         "service-1-text": "Comprehensive feasibility studies and complete administrative management.",
         "service-2-title": "Bespoke Home Staging",
         "service-2-text": "Professional interior styling to maximize property appeal and daily rates.",
-        "service-3-title": "Architectural Photography",
-        "service-3-text": "High-end editorial shooting to highlight every detail of your luxury residence.",
+        "service-3-title": "Professional Photography",
+        "service-3-text": "High-quality shooting to highlight every detail of your property.",
         "service-4-title": "Marketing & Distribution",
-        "service-4-text": "Premium copywriting and multi-channel marketing across elite global platforms.",
+        "service-4-text": "Professional copywriting and multi-channel marketing across all major platforms.",
         "service-5-title": "Comprehensive Insurance",
-        "service-5-text": "Total protection against damages and defaults through premium OTA partnerships.",
-        "service-6-title": "Concierge Check-in/out",
-        "service-6-text": "A warm, five-star welcome and professional management for every guest.",
-        "service-7-title": "Premium Maintenance",
-        "service-7-text": "Hotel-standard hygiene and proactive maintenance for peak property condition.",
-        "service-8-title": "Boutique Web Solutions",
-        "service-8-text": "Custom digital experiences designed to elevate your brand and capture exclusive leads.",
+        "service-5-text": "Total protection against damages and defaults through OTA partnerships.",
+        "service-6-title": "Check-in / Check-out",
+        "service-6-text": "Warm welcome and professional management for every guest.",
+        "service-7-title": "Cleaning & Maintenance",
+        "service-7-text": "High hygiene standards and scheduled maintenance.",
+        "service-8-title": "Professional Websites",
+        "service-8-text": "Custom websites designed to enhance your business and generate qualified leads.",
 
         // Contact
         "contact-num": "[06]",
@@ -233,7 +235,9 @@ const translations = {
 
         // Footer
         "footer-cta": "Ready to Start? <br><span class=\"text-accent\">Connect with us.</span>",
-        "footer-copyright": "VAT: 04107000129 &mdash; &copy; 2025 Golden Key Luxury Short Rent. All rights reserved.",
+        "footer-copyright": "P.IVA: 04107000129 - ©2026 Lux Florental srl. All rights reserved",
+        "footer-legal": "GoldenKey is a brand of Lux Florental srl - VAT 14530200964 - 04107000129 - P.zza Vetra, 17 Milan 20123",
+        "footer-contact-info": "GoldenKey is a brand of Lux Florental srl - VAT 14530200964 - 04107000129 - P.zza Vetra, 17 Milan 20123 - amministrazione@goldenkeyshortrent.com - +39 3883030552",
         "footer-ai": "Some images on this site were generated via artificial intelligence for purely illustrative purposes.",
         "footer-privacy": "Privacy Policy",
         "footer-cookie": "Cookie Policy",
@@ -261,7 +265,7 @@ const translations = {
         "landing-title-3": "SOLUTION",
         "landing-title-4": "FOR",
         "landing-title-5": "YOUR",
-        "landing-title-6": "LUXURY",
+        "landing-title-6": "YOUR",
         "landing-title-7": "PROPERTY",
         "landing-title-8": "",
         "landing-hero-subtitle": "Professional management for elite short-term rentals. Transform your property into a <strong>high-value asset</strong> with NO UPFRONT COSTS.",
@@ -278,9 +282,9 @@ const translations = {
         "landing-stat-2-label": "Occupancy Rate",
         "landing-stat-3-label": "Return vs Traditional Rent",
         "landing-vsl-title": "SEE HOW IT <span class=\"gold-word\">WORKS</span>",
-        "landing-vsl-subtitle": "Watch how we transform your property into a luxury revenue stream in just 2 minutes.",
+        "landing-vsl-subtitle": "Watch how we transform your property into a steady revenue stream in just 2 minutes.",
         "landing-vsl-cta": "Request Your Free Estimate",
-        "landing-testimonial-1": "\"Since partnering with Golden Key, my Milan apartment generates triple the income. Zero problems, zero stress. I just receive payments every month.\"",
+        "landing-testimonial-1": "\"Since partnering with Goldenkey, my Milan apartment generates triple the income. Zero problems, zero stress. I just receive payments every month.\"",
         "landing-testimonial-1-name": "Marco R.",
         "landing-testimonial-1-role": "Property Owner — Milan",
         "landing-form-urgency": "Guaranteed response within 24h"

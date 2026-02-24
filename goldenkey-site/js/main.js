@@ -169,22 +169,30 @@ function initScrollAnimations() {
 }
 
 /**
- * Video Fallback — Hide fallback image once video plays
+ * Video Fallback — Show fallback image ONLY if the active video fails to load/play
+ * The fallback is hidden by default (display:none), shown only on error.
  */
 function initVideoFallback() {
-    const videos = document.querySelectorAll('.hero-video');
+    const firstVideo = document.getElementById('heroVideo1');
     const fallback = document.querySelector('.hero-fallback');
 
-    if (videos.length > 0 && fallback) {
-        videos.forEach(video => {
-            video.addEventListener('playing', () => {
-                fallback.style.opacity = '0';
-                setTimeout(() => {
-                    fallback.style.display = 'none';
-                }, 500);
-            });
-        });
-    }
+    if (!firstVideo || !fallback) return;
+
+    // If the first video fails, reveal the fallback image
+    firstVideo.addEventListener('error', () => {
+        fallback.style.display = 'block';
+        fallback.style.opacity = '1';
+    });
+
+    // Also handle stalled/no source on mobile
+    firstVideo.addEventListener('stalled', () => {
+        setTimeout(() => {
+            if (firstVideo.readyState === 0) {
+                fallback.style.display = 'block';
+                fallback.style.opacity = '1';
+            }
+        }, 3000);
+    });
 }
 
 /**
@@ -519,12 +527,7 @@ function initReviewsCarousel() {
         nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
     }
 
-    // Auto-advance every 6 seconds
-    setInterval(() => {
-        const totalPages = getTotalPages();
-        const nextPage = (currentPage + 1) % totalPages;
-        goToPage(nextPage);
-    }, 6000);
+    // No auto-advance — user navigates manually with arrows/dots
 
     // Rebuild on resize
     window.addEventListener('resize', () => {
@@ -567,93 +570,51 @@ function initCtaSlideshow() {
  * Hero Video Rotation — crossfade between multiple hero background videos
  * ELITE EDITION: Adaptive Smart Loading (SD for Mobile, HD for Desktop)
  */
+/**
+ * Hero Video Rotation — crossfade between multiple hero background videos
+ * Updated for definitive 4s seamless cycle.
+ */
 function initHeroVideoRotation() {
     const videos = document.querySelectorAll('.hero-video');
     if (videos.length === 0) return;
 
-    // Detection: Is the user on a high-performance/large screen device?
-    const isHighEnd = window.innerWidth > 1024;
+    let currentIndex = 0;
+    const cycleTime = 6000;       // total time per video (ms)
+    const transitionDuration = 2500; // must match CSS transition (ms)
 
-    // Helper: Select best source based on device
-    function getBestSource(video) {
-        if (isHighEnd && video.dataset.srcHd) {
-            return video.dataset.srcHd;
-        }
-        return video.dataset.src || null;
-    }
+    // Start the first video
+    videos[0].play().catch(() => { });
 
-    // Helper to load video source on demand (Adaptive HD version)
-    function loadVideo(video) {
-        const bestSrc = getBestSource(video);
-        if (!bestSrc) return;
+    setInterval(() => {
+        const currentVideo = videos[currentIndex];
+        const nextIndex = (currentIndex + 1) % videos.length;
+        const nextVideo = videos[nextIndex];
 
-        // Check if we need to inject/change the source
-        const existingSource = video.querySelector('source');
+        // 1. Start next video playing from the beginning (underneath, invisible)
+        nextVideo.currentTime = 0;
+        nextVideo.play().catch(() => { });
 
-        if (!existingSource) {
-            // New injection
-            const source = document.createElement('source');
-            source.src = bestSrc;
-            source.type = 'video/mp4';
-            video.appendChild(source);
-            video.load();
-        } else if (existingSource.src.indexOf(bestSrc) === -1) {
-            // Upgrade existing source (e.g., for the first video)
-            existingSource.src = bestSrc;
-            video.load();
-            if (video.classList.contains('active')) {
-                video.play().catch(e => console.warn("Autoplay interrupted during upgrade:", e));
-            }
-        }
+        // 2. Promote next video to z-index 2, full opacity — sits behind current
+        nextVideo.classList.add('next');
 
-        // Cleanup to prevent re-runs
-        video.removeAttribute('data-src');
-        video.removeAttribute('data-src-hd');
-    }
+        // Small rAF delay to ensure the browser paints the 'next' state first
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                // 3. Fade OUT current video (opacity 1 → 0, stays at z-index 3)
+                currentVideo.classList.remove('active');
 
-    // INITIAL ACTION: Upgrade the FIRST video if we are on high-end
-    if (videos[0]) {
-        // The first video often has a hardcoded source in HTML for LCP
-        // We only "upgrade" it if isHighEnd is true and it has data-src-hd
-        const firstVideo = videos[0];
-        if (isHighEnd && firstVideo.dataset.srcHd) {
-            // Delay slightly to not compete with initial page paint
-            setTimeout(() => loadVideo(firstVideo), 1000);
-        }
-    }
-
-    // Preload the SECOND video after a delay to be ready
-    setTimeout(() => {
-        if (videos[1]) loadVideo(videos[1]);
-    }, 5000);
-
-    // When a video ends, crossfade to the next one
-    videos.forEach((video, index) => {
-        video.addEventListener('ended', () => {
-            // Fade out current
-            video.classList.remove('active');
-
-            // Move to next video
-            const nextIndex = (index + 1) % videos.length;
-            const nextVideo = videos[nextIndex];
-
-            // Ensure next video is loaded
-            loadVideo(nextVideo);
-
-            // Start loading the one AFTER the next one
-            const doubleNextIndex = (nextIndex + 1) % videos.length;
-            loadVideo(videos[doubleNextIndex]);
-
-            // Reset and play next video
-            nextVideo.currentTime = 0;
-            nextVideo.play().catch(e => {
-                // Handle autoplay block
-                console.warn("Autoplay block on transition:", e);
-                nextVideo.classList.add('active'); // Still show it even if paused
+                // 4. After CSS transition completes, make next the new active
+                setTimeout(() => {
+                    nextVideo.classList.remove('next');
+                    nextVideo.classList.add('active');
+                    currentVideo.pause();
+                    currentVideo.currentTime = 0;
+                    currentIndex = nextIndex;
+                }, transitionDuration);
             });
-            nextVideo.classList.add('active');
         });
-    });
+
+    }, cycleTime);
 }
 
 /**

@@ -619,17 +619,19 @@ function initHeroVideoRotation() {
 
 /**
  * Gallery Modal & Swiper — Show/Hide logic and Swiper init
+ * Supports opening at a specific slide when clicking property grid images
  */
 function initGallery() {
     const showBtn = document.getElementById('showMoreGallery');
     const closeBtn = document.getElementById('closeGallery');
     const modal = document.getElementById('galleryModal');
     const overlay = document.getElementById('galleryOverlay');
+    const gridItems = document.querySelectorAll('.pg-item[data-slide-index]');
     let swiperInstance = null;
 
-    if (!showBtn || !modal) return;
+    if (!modal) return;
 
-    function openModal() {
+    function openModal(slideIndex) {
         modal.style.display = 'flex';
         setTimeout(() => {
             modal.classList.add('active');
@@ -643,6 +645,7 @@ function initGallery() {
                 spaceBetween: 30,
                 grabCursor: true,
                 centeredSlides: true,
+                initialSlide: slideIndex || 0,
                 keyboard: {
                     enabled: true,
                 },
@@ -655,6 +658,8 @@ function initGallery() {
                     prevEl: ".swiper-button-prev",
                 },
             });
+        } else if (typeof slideIndex === 'number') {
+            swiperInstance.slideTo(slideIndex, 0);
         }
     }
 
@@ -666,7 +671,19 @@ function initGallery() {
         }, 500);
     }
 
-    showBtn.addEventListener('click', openModal);
+    // "Mostra altro" button opens gallery from slide 0
+    if (showBtn) {
+        showBtn.addEventListener('click', () => openModal(0));
+    }
+
+    // Each grid image opens gallery at its corresponding slide
+    gridItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const idx = parseInt(item.dataset.slideIndex, 10);
+            openModal(idx);
+        });
+    });
+
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (overlay) overlay.addEventListener('click', closeModal);
 

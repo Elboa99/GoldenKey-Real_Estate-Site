@@ -92,9 +92,9 @@ const translations = {
 
         // Footer
         "footer-cta": "Pronto a Iniziare? <br><span class=\"text-accent\">Contattaci.</span>",
-        "footer-copyright": "P.IVA: 04107000129 - ©2026 Lux Florental srl. All rights reserved",
-        "footer-legal": "GoldenKey è un marchio di Lux Florental srl - P.iva 14530200964 - 04107000129 - P.zza Vetra, 17 Milano 20123",
-        "footer-contact-info": "GoldenKey è un marchio di Lux Florental srl - P.iva 14530200964 - 04107000129 - P.zza Vetra, 17 Milano 20123 - amministrazione@goldenkeyshortrent.com - +39 3883030552",
+        "footer-copyright": "GoldenKey è un marchio di Lux Florental srl - P.iva 14530200964 - 04107000129 - P.zza Vetra, 17 Milano 20123 - © Lux Florental Srl. All rights reserved.",
+        "footer-legal": "GoldenKey è un marchio di Lux Florental srl - P.iva 14530200964 - 04107000129 - P.zza Vetra, 17 Milano 20123 - © Lux Florental Srl. All rights reserved.",
+        "footer-contact-info": "GoldenKey è un marchio di Lux Florental srl - P.iva 14530200964 - 04107000129 - P.zza Vetra, 17 Milano 20123 - © Lux Florental Srl. All rights reserved.",
         "footer-ai": "Alcune immagini presenti su questo sito sono state generate tramite intelligenza artificiale per scopi puramente illustrativi.",
         "footer-privacy": "Privacy Policy",
         "footer-cookie": "Cookie Policy",
@@ -235,9 +235,9 @@ const translations = {
 
         // Footer
         "footer-cta": "Ready to Start? <br><span class=\"text-accent\">Connect with us.</span>",
-        "footer-copyright": "P.IVA: 04107000129 - ©2026 Lux Florental srl. All rights reserved",
-        "footer-legal": "GoldenKey is a brand of Lux Florental srl - VAT 14530200964 - 04107000129 - P.zza Vetra, 17 Milan 20123",
-        "footer-contact-info": "GoldenKey is a brand of Lux Florental srl - VAT 14530200964 - 04107000129 - P.zza Vetra, 17 Milan 20123 - amministrazione@goldenkeyshortrent.com - +39 3883030552",
+        "footer-copyright": "GoldenKey is a brand of Lux Florental srl - VAT 14530200964 - 04107000129 - P.zza Vetra, 17 Milan 20123 - © Lux Florental Srl. All rights reserved.",
+        "footer-legal": "GoldenKey is a brand of Lux Florental srl - VAT 14530200964 - 04107000129 - P.zza Vetra, 17 Milan 20123 - © Lux Florental Srl. All rights reserved.",
+        "footer-contact-info": "GoldenKey is a brand of Lux Florental srl - VAT 14530200964 - 04107000129 - P.zza Vetra, 17 Milan 20123 - © Lux Florental Srl. All rights reserved.",
         "footer-ai": "Some images on this site were generated via artificial intelligence for purely illustrative purposes.",
         "footer-privacy": "Privacy Policy",
         "footer-cookie": "Cookie Policy",

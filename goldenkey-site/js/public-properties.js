@@ -218,7 +218,7 @@ function renderPropertiesCardList(propertiesToRender) {
                 </div>
 
                 <div class="property-footer">
-                    <div class="property-price">€ ${price} <span data-i18n="prop-search-price">/ Notte</span></div>
+                    <div class="property-price"><span data-i18n="prop-search-price">A partire da</span> € ${price}</div>
                     <div class="btn-view" data-i18n="prop-view-btn">Vedi Dettagli</div>
                 </div>
             </div>
